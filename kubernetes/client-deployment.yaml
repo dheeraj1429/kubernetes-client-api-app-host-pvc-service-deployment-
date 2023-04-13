@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-app
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-application
+  template:
+    metadata:
+      labels:
+        app: client-application
+    spec:
+      containers:
+        - name: client-app
+          image: dheeraj1429/node-kub-client-app:v3
+          env:
+            - name: API_ADDRESS
+              value: http://api-service.default:8000
+            - name: POD_IP
+              value: http://api-service.default:8000

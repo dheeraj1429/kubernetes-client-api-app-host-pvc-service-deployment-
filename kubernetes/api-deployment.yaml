@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-app
+spec: 
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-application
+  template:
+    metadata:
+      labels:
+        app: api-application
+    spec:
+      containers:
+        - name: client-app
+          image: dheeraj1429/node-kub-api-app:v3
+          volumeMounts:
+            - mountPath: /app/db
+              name: db
+      volumes:
+        - name: db
+          hostPath:
+            path: /data
+            type: DirectoryOrCreate

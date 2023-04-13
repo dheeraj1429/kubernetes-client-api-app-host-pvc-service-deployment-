@@ -1,0 +1,13 @@
+{
+   "name": "docker-kub-app",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "watch": "npm run dev --prefix ./client & npm run dev --prefix ./api"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC"
+}
